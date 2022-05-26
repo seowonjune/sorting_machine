@@ -26,7 +26,7 @@ print(x_test.shape[0], 'test samples')
 
 batch_size = 128
 num_classes = 10
-epochs = 10  #여러번 학습하면 좋겠지만 시간관계상 3번만 학습하고 결과를 확인합니다.
+epochs = 5  #여러번 학습하면 좋겠지만 시간관계상 3번만 학습하고 결과를 확인합니다.
 
 y_train = tf.keras.utils.to_categorical(y_train, num_classes)
 y_test = tf.keras.utils.to_categorical(y_test, num_classes)

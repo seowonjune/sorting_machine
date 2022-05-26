@@ -1,9 +1,10 @@
 #include <Arduino.h>
 
 //초음파 센서 핀 설정 (Ultrasonic sensor)
-#define TRIG 9 //TRIG 핀 설정 (초음파 보내는 핀)
-#define ECHO 8 //ECHO 핀 설정 (초음파 받는 핀)
-
+#define TRIG 12 //TRIG 핀 설정 (초음파 보내는 핀)
+#define ECHO 13 //ECHO 핀 설정 (초음파 받는 핀)
+#define blue 0
+#define red 1 
 
 void setup() {
   // put your setup code here, to run once:
@@ -12,11 +13,14 @@ void setup() {
   //초음파 센서 부분
   pinMode(TRIG, OUTPUT);
   pinMode(ECHO, INPUT);
+  pinMode(blue, OUTPUT);
+  pinMode(red, OUTPUT);
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
-
+  degitalWrite(red, LOW)
+  degitalWrite(blue, HIGH)
   //초음파 센서
   long duration, distance;
 
@@ -36,5 +40,9 @@ void loop() {
   Serial.println("\ndistance: ");
   Serial.println(distance);
 
-  delay(1000); //dealy timne 1s
+  if(distance<=4){
+    deigitalWrite(blue, LOW);
+    deigitalWrite(red, HIGH);
+  }
+  delay(500); //dealy timne 1s
 }
